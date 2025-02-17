@@ -94,76 +94,80 @@ class _TimeCalculatorPageState extends State<TimeCalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Time Calculator'),
+        title: const Text('Time Calculator'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ..._timeControllers.asMap().entries.map((entry) {
-                int index = entry.key;
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          controller: entry.value,
-                          decoration: InputDecoration(
-                            labelText: 'Enter time (HH:MM)',
-                            border: OutlineInputBorder(),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ..._timeControllers.asMap().entries.map((entry) {
+                  int index = entry.key;
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: entry.value,
+                            decoration: const InputDecoration(
+                              labelText: 'Enter time (HH:MM)',
+                              border: OutlineInputBorder(),
+                            ),
+                            keyboardType: TextInputType.datetime,
+                            onChanged: (value) =>
+                                _onTimeChanged(value, entry.value),
                           ),
-                          keyboardType: TextInputType.datetime,
-                          onChanged: (value) =>
-                              _onTimeChanged(value, entry.value),
                         ),
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.remove_circle, color: Colors.red),
-                        onPressed: () => removeTimeField(index),
-                      ),
-                    ],
-                  ),
-                );
-              }),
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: subtractAllTimes,
-                    child: Text('Subtract All'),
-                  ),
-                  ElevatedButton(
-                    onPressed: addAllTimes,
-                    child: Text('Add All'),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: clearAllTimes,
-                    child: Text('Clear All'),
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  ),
-                  ElevatedButton(
-                    onPressed: addTimeField,
-                    child: Text('Add Another Time Field'),
-                  ),
-                ],
-              ),
-              SizedBox(height: 24),
-              Text(
-                _result,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            ],
+                        IconButton(
+                          icon: const Icon(Icons.remove_circle,
+                              color: Colors.red),
+                          onPressed: () => removeTimeField(index),
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      onPressed: subtractAllTimes,
+                      child: const Text('Subtract All'),
+                    ),
+                    ElevatedButton(
+                      onPressed: addAllTimes,
+                      child: const Text('Add All'),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      onPressed: clearAllTimes,
+                      style:
+                          ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                      child: const Text('Clear All'),
+                    ),
+                    ElevatedButton(
+                      onPressed: addTimeField,
+                      child: const Text('Add Another Time Field'),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 24),
+                Text(
+                  _result,
+                  style: const TextStyle(
+                      fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
           ),
         ),
       ),
