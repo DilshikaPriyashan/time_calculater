@@ -79,7 +79,6 @@ class _TimeCalculatorPageState extends State<TimeCalculatorPage> {
                           child: TextField(
                             controller: entry.value,
                             decoration: const InputDecoration(
-                                // labelText: 'Enter time (HH:MM)',
                                 hintText: 'Enter time (HH:MM)',
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
