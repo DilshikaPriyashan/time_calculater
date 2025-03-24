@@ -12,7 +12,6 @@ class TimeCalculatorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Time Calculator',
-      theme: ThemeData(primarySwatch: Colors.blue),
       home: const TimeCalculatorPage(),
     );
   }

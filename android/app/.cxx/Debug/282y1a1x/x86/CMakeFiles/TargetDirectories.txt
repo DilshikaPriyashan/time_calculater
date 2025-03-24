@@ -1,0 +1,2 @@
+/home/dilshika/Documents/flutter/time_calculater/android/app/.cxx/Debug/282y1a1x/x86/CMakeFiles/edit_cache.dir
+/home/dilshika/Documents/flutter/time_calculater/android/app/.cxx/Debug/282y1a1x/x86/CMakeFiles/rebuild_cache.dir

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:time_cal/theme/colors.dart';
 import '../services/time_calculator_service.dart';
 
 class TimeCalculatorPage extends StatefulWidget {
@@ -57,9 +58,9 @@ class _TimeCalculatorPageState extends State<TimeCalculatorPage> {
       appBar: AppBar(
         title: const Text(
           'Time Calculator',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
+          style: TextStyle(color: white, fontWeight: FontWeight.w400),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: black,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -78,21 +79,25 @@ class _TimeCalculatorPageState extends State<TimeCalculatorPage> {
                           child: TextField(
                             controller: entry.value,
                             decoration: const InputDecoration(
-                              labelText: 'Enter time (HH:MM)',
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(25),
+                                // labelText: 'Enter time (HH:MM)',
+                                hintText: 'Enter time (HH:MM)',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(25),
+                                  ),
                                 ),
-                              ),
-                            ),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(width: 2, color: black),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(25)))),
                             keyboardType: TextInputType.datetime,
                             onChanged: (value) =>
                                 _onTimeChanged(value, entry.value),
                           ),
                         ),
                         IconButton(
-                          icon: const Icon(Icons.remove_circle,
-                              color: Colors.red),
+                          icon: const Icon(Icons.remove_circle, color: red),
                           onPressed: () => _removeTimeField(index),
                         ),
                       ],
@@ -105,11 +110,19 @@ class _TimeCalculatorPageState extends State<TimeCalculatorPage> {
                   children: [
                     ElevatedButton(
                       onPressed: () => _calculate(false),
-                      child: const Text('Subtract All'),
+                      child: const Text(
+                        'Subtract All',
+                        style: TextStyle(color: black),
+                      ),
                     ),
                     ElevatedButton(
                       onPressed: () => _calculate(true),
-                      child: const Text('Add All'),
+                      child: const Text(
+                        'Add All',
+                        style: TextStyle(
+                          color: black,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -119,20 +132,19 @@ class _TimeCalculatorPageState extends State<TimeCalculatorPage> {
                   children: [
                     ElevatedButton(
                       onPressed: _clearAllTimes,
-                      style:
-                          ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                      style: ElevatedButton.styleFrom(backgroundColor: red),
                       child: const Text(
                         'Clear All',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: black),
                       ),
                     ),
                     ElevatedButton(
                       onPressed: _addTimeField,
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.greenAccent),
+                          backgroundColor: greenAccent),
                       child: const Text(
                         'Add Another Time Field',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: black),
                       ),
                     ),
                   ],
