@@ -94,7 +94,14 @@ class _TimeCalculatorPageState extends State<TimeCalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Time Calculator'),
+        title: const Text(
+          'Time Calculator',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        backgroundColor: Colors.black,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -114,7 +121,13 @@ class _TimeCalculatorPageState extends State<TimeCalculatorPage> {
                             controller: entry.value,
                             decoration: const InputDecoration(
                               labelText: 'Enter time (HH:MM)',
-                              border: OutlineInputBorder(),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(
+                                    25,
+                                  ),
+                                ),
+                              ),
                             ),
                             keyboardType: TextInputType.datetime,
                             onChanged: (value) =>
@@ -152,11 +165,19 @@ class _TimeCalculatorPageState extends State<TimeCalculatorPage> {
                       onPressed: clearAllTimes,
                       style:
                           ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                      child: const Text('Clear All'),
+                      child: const Text(
+                        'Clear All',
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ),
                     ElevatedButton(
                       onPressed: addTimeField,
-                      child: const Text('Add Another Time Field'),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.greenAccent),
+                      child: const Text(
+                        'Add Another Time Field',
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ),
                   ],
                 ),
