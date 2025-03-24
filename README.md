@@ -1,16 +1,56 @@
-# time_cal
+# Time Calculator App
 
-A new Flutter project.
+## Overview
+The **Time Calculator App** is a Flutter-based application that allows users to add and subtract multiple time values in HH:MM format. The app provides an easy-to-use interface with dynamic time input fields, result display, and buttons to perform calculations.
 
-## Getting Started
+## Features
+- Add multiple time values together.
+- Subtract time values from the first input.
+- Add or remove time input fields dynamically.
+- Clear all input fields with a single button.
+- Responsive and user-friendly UI.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
+### Prerequisites
+- Flutter installed ([Install Flutter](https://flutter.dev/docs/get-started/install))
+- Dart SDK
+- IDE (VS Code, Android Studio, etc.)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Steps
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/DilshikaPriyashan/time_calculater.git
+   cd time-calculator
+   ```
+2. **Install dependencies:**
+   ```sh
+   flutter pub get
+   ```
+3. **Run the application:**
+   ```sh
+   flutter run
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Usage
+1. Enter time values in HH:MM format.
+2. Click **Add Another Time Field** to add more inputs.
+3. Click **Add All** to sum up all time values.
+4. Click **Subtract All** to subtract each subsequent value from the first.
+5. Click **Clear All** to reset all fields.
+
+## Technologies Used
+- **Flutter** (UI framework)
+- **Dart** (Programming language)
+- **Material Design** (For UI styling)
+
+## Screenshots
+![App Screenshot](/assets/ss.png)
+
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+For questions or suggestions, feel free to reach out at [dilshikapriyashan98@gmail.com](mailto:dilshikapriyashan98@gmail.com).
+
